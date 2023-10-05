@@ -13,8 +13,12 @@
     <!--  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>-->
 
     <%= form_for :search, url: search_path, method: :get do |f| %>
+      <%= f.label :opt, "Select Parameter", class: "form-label" %>
+      <%= select_tag :opt, options_for_select([["By City", "CIT"], ["By Title", "TIT"]]) ,class: "form-select mb-3"%>
+
       <div class="input-group mb-3">
-        <%= f.text_field :search_title, class: "form-control", required: true, placeholder: "Search by hostel title" %>
+
+        <%= f.text_field :search_q, class: "form-control", required: true, placeholder: "Enter here..." %>
         <%= f.submit "Search 🔍", class: "btn btn-outline-secondary" %>
       </div>
     <% end %>
@@ -24,7 +28,7 @@
 
 <% if @result.eql?(1) %>
 <%#= @found_hostel.inspect %>
-  <h1 class="h1 text-center mb-5">( <%= pluralize(@found_hostel.length," ) Hostel") %> Found !</h1>
+  <h1 class="h1 text-center mb-5">( <%= pluralize(@found_hostel.length, " ) Hostel") %> Found !</h1>
   <%= render "hostels/hostel", para: @found_hostel %>
 <% elsif @result.eql?(0) %>
   <h1>No hostel found</h1>
