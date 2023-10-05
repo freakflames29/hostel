@@ -1,8 +1,31 @@
 <!--<h1>Hi ,<%#= current_user.username %></h1>-->
 
-<div class="herow mt-5">
-  <div class="d-flex justify-content-center">
-    <h1 class="h1">"Your Home Away from Home"</h1>
-    <h1 class="h1">-Hostelers</h1>
+<!--<div class="herow mt-5 mb-5 ">-->
+<div class="jumbotron jumbotron-fluid">
+  <div class=" container">
+    <h1 class="display-2 text-center ">"Your Home Away from Home"--Hostelers</h1>
+    <hr>
+
+
+    <h2 class="display-4">Search Here</h2>
+
+    <!--  <input type="text" class="form-control" placeholder="Search by hostel title" aria-label="Search " aria-describedby="button-addon2">-->
+    <!--  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>-->
+
+    <%= form_for :search, url: search_path, method: :get do |f| %>
+      <div class="input-group mb-3">
+        <%= f.text_field :search_title, class: "form-control", required: true, placeholder: "Search by hostel title" %>
+        <%= f.submit "Search 🔍", class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
   </div>
+
 </div>
+
+<% if @result.eql?(1) %>
+<%#= @found_hostel.inspect %>
+  <h1 class="h1 text-center mb-5">( <%= pluralize(@found_hostel.length," ) Hostel") %> Found !</h1>
+  <%= render "hostels/hostel", para: @found_hostel %>
+<% elsif @result.eql?(0) %>
+  <h1>No hostel found</h1>
+<% end %>

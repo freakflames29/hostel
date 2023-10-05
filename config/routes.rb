@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :hostels, except: [:new]
   get 'upload', to: "hostels#new"
 
+  # search routes
+
+  get 'search',to: "homes#search"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

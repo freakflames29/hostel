@@ -30,7 +30,7 @@
     <%= image_tag "#{@hostel.img}", alt: "Imge of hostel", class: "card-img-top custom_imgs" %>
 
     <div class="card-body">
-      <h3 class="card-title"><%= @hostel.title %></h3>
+      <h3 class="card-title"><%= @hostel.title.capitalize %></h3>
       <p class="card-text"><%= @hostel.desc %></p>
       <p class="card-text">
         <small class="text-body-secondary">by @<%= link_to @hostel.user.username, user_path(@hostel.user) %></small></p>
