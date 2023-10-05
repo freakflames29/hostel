@@ -3,6 +3,7 @@
 class HostelsController < ApplicationController
   before_action :require_user, only: [:new, :create]
   before_action :edit_restrictions,only: [:edit,:update]
+  before_action :redirect_if_not_admin ,only: [:new,:create]
 
   def index
     @hostels = Hostel.order(created_at: :desc)
