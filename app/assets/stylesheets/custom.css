@@ -13,3 +13,6 @@
     background-size: cover;
     border-radius: 15px;
 }
+.fullBody{
+    min-height: 100vh;
+}
