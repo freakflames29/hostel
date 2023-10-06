@@ -6,7 +6,7 @@ const responses = {
     "login": "To login click here: <a href= 'http://127.0.0.1:3000/login'>Login</a> ",
     "upload": "To Upload Hostel you have to be Hostel owner and click here to upload hostel :  <a href= 'http://127.0.0.1:3000/upload'>Upload</a>",
     "hostel":"Click here : <a href= 'http://127.0.0.1:3000/hostels'>All Hostels</a> to view all hostels",
-    "hi":"Hi ! how can i help you ?"
+    "hi":"Hi ! tell me your queries"
 
 }
 const appendMsg = (msg, opt) => {
