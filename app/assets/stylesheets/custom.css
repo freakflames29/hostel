@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    /*overflow: hidden;*/
     font-family: 'Roboto', sans-serif;
 }
 
@@ -18,7 +19,7 @@
     --base_text_color: #000;
     --light_blue: #00C4FF;
     --dark_blue: #30A2FF;
-    --bold_font: 'Roboto';
+    --bold_font: 'Oswald';
 }
 
 a {
@@ -30,7 +31,8 @@ a {
     /*background-color: red;*/
     height: 12vh;
     display: flex;
-    margin-left: 5%;
+    padding-left: 5%;
+
 }
 
 .logo_side {
@@ -93,7 +95,7 @@ a {
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    border-radius: 25px;
     display: block;
     border: none;
     width: 20%;
@@ -111,9 +113,10 @@ a {
     min-height: 100vh;
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    /*margin: 10px;*/
     min-width: 100%;
     overflow: hidden;
+    padding-right: 5%;
 }
 
 .hero_left {
@@ -131,6 +134,7 @@ a {
 .hero_left h1 {
     font-family: var(--bold_font), sans-serif;
     font-weight: 900;
+    /*text-transform: uppercase;*/
 
 }
 
@@ -145,7 +149,9 @@ a {
     -webkit-text-fill-color: transparent;
 
 }
-
+.title-2 h1{
+    font-size: 4.5rem;
+}
 .hero_left p {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -158,4 +164,20 @@ a {
 
 .hero_right img {
     width: 100%;
+}
+.search_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.search_form{
+    width: 100%;
+    display: flex;
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+}
+.search{
+    min-width: 80%;
 }

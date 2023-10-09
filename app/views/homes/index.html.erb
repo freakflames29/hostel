@@ -43,3 +43,22 @@
     <%= image_tag "hero.jpg", alt: "Hero img" %>
   </div>
 </div>
+
+<div class="search_container">
+  <div class="serach_title title title-2">
+    <h1>Search Here</h1>
+  </div>
+
+  <div class="search_form">
+    <%= form_for :search, url: search_path,class: "search", method: :get do |f| %>
+      <%#= f.label :opt, "Select Parameter", class: "form-label" %>
+      <%= select_tag :opt, options_for_select([["By City", "CIT"], ["By Title", "TIT"]]), class: "form-select mb-3" %>
+
+
+
+      <%= f.text_field :search_q, class: "form-control", required: true, placeholder: "Enter here..." %>
+      <%= f.submit "Search 🔍", class: "btn btn-outline-secondary" %>
+
+    <% end %>
+  </div>
+</div>
