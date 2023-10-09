@@ -1,35 +1,45 @@
-<!--<h1>Hi ,<%#= current_user.username %></h1>-->
-
-<!--<div class="herow mt-5 mb-5 ">-->
-<div class="jumbotron jumbotron-fluid">
-  <div class=" container">
-    <h1 class="display-2 text-center ">"Your Home Away from Home"--Hostelers</h1>
-    <hr>
+<!--<div class="jumbotron jumbotron-fluid">-->
+<!--  <div class=" container">-->
+<!--    <h1 class="display-2 text-center ">"Your Home Away from Home"--Hostelers</h1>-->
+<!--    <hr>-->
 
 
-    <h2 class="display-4">Search Here</h2>
+<!--    <h2 class="display-4">Search Here</h2>-->
 
-    <!--  <input type="text" class="form-control" placeholder="Search by hostel title" aria-label="Search " aria-describedby="button-addon2">-->
-    <!--  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>-->
 
-    <%= form_for :search, url: search_path, method: :get do |f| %>
-      <%= f.label :opt, "Select Parameter", class: "form-label" %>
-      <%= select_tag :opt, options_for_select([["By City", "CIT"], ["By Title", "TIT"]]) ,class: "form-select mb-3"%>
+<%#= form_for :search, url: search_path, method: :get do |f| %>
+<%#= f.label :opt, "Select Parameter", class: "form-label" %>
+<%#= select_tag :opt, options_for_select([["By City", "CIT"], ["By Title", "TIT"]]), class: "form-select mb-3" %>
 
-      <div class="input-group mb-3">
+<!--      <div class="input-group mb-3">-->
 
-        <%= f.text_field :search_q, class: "form-control", required: true, placeholder: "Enter here..." %>
-        <%= f.submit "Search 🔍", class: "btn btn-outline-secondary" %>
-      </div>
-    <% end %>
-  </div>
+<%#= f.text_field :search_q, class: "form-control", required: true, placeholder: "Enter here..." %>
+<%#= f.submit "Search 🔍", class: "btn btn-outline-secondary" %>
+<!--      </div>-->
+<%# end %>
+<!--  </div>-->
 
-</div>
+<!--</div>-->
 
-<% if @result.eql?(1) %>
+<%# if @result.eql?(1) %>
 <%#= @found_hostel.inspect %>
-  <h1 class="h1 text-center mb-5">( <%= pluralize(@found_hostel.length, " ) Hostel") %> Found !</h1>
-  <%= render "hostels/hostel", para: @found_hostel %>
-<% elsif @result.eql?(0) %>
-  <h1>No hostel found</h1>
-<% end %>
+<!--  <h1 class="h1 text-center mb-5">( <%#= pluralize(@found_hostel.length, " ) Hostel") %> Found !</h1>-->
+<%#= render "hostels/hostel", para: @found_hostel %>
+<%# elsif @result.eql?(0) %>
+<!--  <h1>No hostel found</h1>-->
+<%# end %>
+
+
+<div class="hero_container">
+  <div class="hero_left">
+    <div class="title">
+      <h1>Your Home</h1>
+      <h1>Away from home</h1>
+    </div>
+    <p><span>"Discover your ideal stay with us – where comfort and convenient</span></p>
+    <button class="btn">Find Now </button>
+  </div>
+  <div class="hero_right">
+   <%= image_tag "hero.jpg",alt:"Hero img" %>
+  </div>
+</div>
