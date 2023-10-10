@@ -37,7 +37,8 @@
       <h1>Away from home</h1>
     </div>
     <p><span>"Discover your ideal stay with us – where comfort and convenient</span></p>
-    <button class="btn">Find Now <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></button>
+    <a href="#search_bar" class="btn">Find Now <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></a>
+<!--    <button class="btn">Find Now <i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></button>-->
   </div>
   <div class="hero_right">
     <%= image_tag "hero.jpg", alt: "Hero img" %>
@@ -49,16 +50,26 @@
     <h1>Search Here</h1>
   </div>
 
-  <div class="search_form">
-    <%= form_for :search, url: search_path,class: "search", method: :get do |f| %>
+  <div class="search_form" id="search_bar">
+    <%= form_for :search, url: search_path, class: "search", method: :get do |f| %>
       <%#= f.label :opt, "Select Parameter", class: "form-label" %>
       <%= select_tag :opt, options_for_select([["By City", "CIT"], ["By Title", "TIT"]]), class: "form-select mb-3" %>
 
 
 
       <%= f.text_field :search_q, class: "form-control", required: true, placeholder: "Enter here..." %>
-      <%= f.submit "Search 🔍", class: "btn btn-outline-secondary" %>
+      <%#= f.submit ('<i class="fa-solid fa-magnifying-glass" style="color: #30a2ff;"></i>').html_safe, class: "search-btn" %>
+
+      <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #30a2ff;"></i></button>
 
     <% end %>
   </div>
 </div>
+
+<%# if @result.eql?(1) %>
+<%#= @found_hostel.inspect %>
+<!--  <h1 class="h1 text-center mb-5">( <%#= pluralize(@found_hostel.length, " ) Hostel") %> Found !</h1>-->
+<%#= render "hostels/hostel", para: @found_hostel %>
+<%# elsif @result.eql?(0) %>
+<!--  <h1>No hostel found</h1>-->
+<%# end %>
