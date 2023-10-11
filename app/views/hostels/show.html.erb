@@ -1,58 +1,103 @@
-<%#= @hostel.inspect %>
+<!--<div class="d-flex justify-content-center">-->
+<!--  <div class="card mb-3" style="width: 45rem;">-->
+<%#= image_tag "#{@hostel.img}", alt: "Imge of hostel", class: "card-img-top custom_imgs" %>
 
-<!--<div class="card" style="width: 30rem;">-->
-<%#= image_tag "#{@hostel.img}", alt: "Imge of hostel", class: "card-img-top" %>
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-title"><%#= @hostel.title %></h5>-->
-<!--    <p class="card-text"><%#= @hostel.desc %></p>-->
+<!--    <div class="card-body">-->
+<!--      <h3 class="card-title"><%#= @hostel.title.capitalize %></h3>-->
+<!--      <p class="card-text"><%#= @hostel.desc %></p>-->
+<!--      <p class="card-text">-->
+<!--        <small class="text-body-secondary">by @<%#= link_to @hostel.user.username, user_path(@hostel.user) %></small></p>-->
 
-<!--    <ul class="list-group">-->
-<!--      <li class="list-group-item d-flex justify-content-between align-items-center">-->
-<!--        <span class="badge bg-primary rounded-pill">14</span>-->
+<!--      <ul class="list-group">-->
+<!--        <li class="list-group-item"><b>Address:</b> <%#= @hostel.address %></li>-->
+<!--        <li class="list-group-item"><b>Landmark:</b> <%#= @hostel.landmark %></li>-->
+<!--        <li class="list-group-item"><b>City:</b> <%#= @hostel.city %></li>-->
+<!--        <li class="list-group-item"><b>Zipcode:</b> <%#= @hostel.zipcode %></li>-->
+<!--        <li class="list-group-item"><b>Country:</b> <%#= @hostel.country %></li>-->
 
-<!--        A list item-->
-<!--      </li>-->
-<!--      <li class="list-group-item d-flex justify-content-between align-items-center">-->
-<!--        A second list item-->
-<!--        <span class="badge bg-primary rounded-pill">2</span>-->
-<!--      </li>-->
-<!--      <li class="list-group-item d-flex justify-content-between align-items-center">-->
-<!--        A third list item-->
-<!--        <span class="badge bg-primary rounded-pill">1</span>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--        <div class="d-flex mt-3">-->
+<%# if @hostel.user.eql?(current_user) %>
+<!--          <hr>-->
+<%#= link_to "✍️ Edit this hostel info", edit_hostel_path(@hostel), class: "btn btn-outline-warning mx-2" %>
+<%#= link_to "🗑️ Delete this hostel", hostel_path(@hostel), class: "btn btn-outline-danger" ,data:{turbo_method: :delete,turbo_confirm:"Are you sure to delete this hostel?"}%>
+<%# else %>
+<%# end %>
+<%#= link_to "📞 Call ", "tel:#{@hostel.user.phone}", class: "btn btn-outline-success mx-2" %>
+<%#= link_to "✉️ Email ", "mailto:#{@hostel.user.email}", class: "btn btn-outline-primary mx-2" %>
+<!--        </div>-->
+<!--      </ul>-->
+<!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-<div class="d-flex justify-content-center">
-  <div class="card mb-3" style="width: 45rem;">
-    <!--  <img src="..." class="card-img-top" alt="...">-->
-    <%= image_tag "#{@hostel.img}", alt: "Imge of hostel", class: "card-img-top custom_imgs" %>
 
-    <div class="card-body">
-      <h3 class="card-title"><%= @hostel.title.capitalize %></h3>
-      <p class="card-text"><%= @hostel.desc %></p>
-      <p class="card-text">
-        <small class="text-body-secondary">by @<%= link_to @hostel.user.username, user_path(@hostel.user) %></small></p>
 
-      <ul class="list-group">
-        <li class="list-group-item"><b>Address:</b> <%= @hostel.address %></li>
-        <li class="list-group-item"><b>Landmark:</b> <%= @hostel.landmark %></li>
-        <li class="list-group-item"><b>City:</b> <%= @hostel.city %></li>
-        <li class="list-group-item"><b>Zipcode:</b> <%= @hostel.zipcode %></li>
-        <li class="list-group-item"><b>Country:</b> <%= @hostel.country %></li>
+<div class="showboxContainer">
+  <div class="showbox">
+    <div class="hostel_info_box">
+      <div class="hostel_image">
+        <%= image_tag "#{@hostel.img}", alt: "Imge of hostel", class: "card-img-top show_img" %>
 
-        <div class="d-flex mt-3">
-        <% if @hostel.user.eql?(current_user) %>
-          <hr>
-          <%= link_to "✍️ Edit this hostel info", edit_hostel_path(@hostel), class: "btn btn-outline-warning mx-2" %>
-          <%= link_to "🗑️ Delete this hostel", hostel_path(@hostel), class: "btn btn-outline-danger" ,data:{turbo_method: :delete,turbo_confirm:"Are you sure to delete this hostel?"}%>
-        <% else %>
-        <% end %>
-        <%= link_to "📞 Call ", "tel:#{@hostel.user.phone}", class: "btn btn-outline-success mx-2" %>
-        <%= link_to "✉️ Email ", "mailto:#{@hostel.user.email}", class: "btn btn-outline-primary mx-2" %>
+      </div>
+      <div class="hostel_desc">
+        <h1 class="colorful title-2 showTitle"><%= @hostel.title.capitalize %></h1>
+
+        <h2 class="mar3 light">Description</h2>
+        <p><%= @hostel.desc.capitalize %></p>
+
+        <div class="list_el">
+          <p class="list_p"><strong> <i class="fa-solid fa-location-dot" style="color: #30a2ff;"></i> Address</strong>
+          </p>
+          <p> <%= @hostel.address.capitalize %></p>
         </div>
-      </ul>
+        <div class="list_el">
+          <p class="list_p"><strong> <i class="fa-solid fa-city" style="color: #30a2ff;"></i> City </strong></p>
+          <p><%= @hostel.city.capitalize %></p>
+        </div>
+        <div class="list_el">
+          <p class="list_p"><strong><i class="fa-solid fa-landmark" style="color: #30a2ff;"></i> Landmark</strong></p>
+          <p><%= @hostel.landmark.capitalize %></p>
+        </div>
+        <div class="list_el">
+          <p class="list_p"><strong> <i class="fa-solid fa-signs-post" style="color: #30a2ff;"></i> Zipcode</strong></p>
+          <p><%= @hostel.zipcode %></p>
+        </div>
+
+      </div>
+    </div>
+    <div class="genralbox">
+      <div class="pricingbox">
+        <h2 class="f">Get at only </h2>
+        <h1 class="title">₹ 2000/-</h1>
+        <%= link_to "tel:#{@hostel.user.phone}", class: "btn btn-outline-success mx-2" do %>
+          <i class="fa-solid fa-phone" style="color: #ffffff;"></i> Call
+        <% end %>
+
+
+        <%= link_to "mailto:#{@hostel.user.email}", class: "btn btn-outline-primary mx-2" do %>
+          <i class="fa-solid fa-envelope" style="color: #ffffff;"></i> Email
+        <% end %>
+
+
+      </div>
+      <div class="userbox">
+        <div class="userbox_content">
+
+
+          <div class="user_avatar">
+            <%= image_tag "male.png", class: "avatar" %>
+          </div>
+          <div class="user_info_show">
+            <h1 class="title-2 colorful"><%= @hostel.user.name.capitalize %></h1>
+            <span class="smallgrey">@<%= @hostel.user.username %></span>
+
+            <span class="badge"><i class="fa-solid fa-hotel"></i> <b><%= @hostel.user.hostels.count %></b> Hostels</span>
+
+            <%= link_to  user_path(@hostel.user),class: "btn full_width" do%>
+              View
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

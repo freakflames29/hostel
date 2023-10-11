@@ -149,6 +149,7 @@ a {
     background: linear-gradient(to bottom left, #00C4FF 47%, #30A2FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /*text-align: center;*/
 
 }
 
@@ -304,45 +305,202 @@ a {
     border-radius: 20px 20px 0 0;
 }
 
-.slowtext{
+.slowtext {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: grey;
     margin-bottom: 4px;
 }
-.card_container .details h2{
+
+.card_container .details h2 {
     color: var(--dark_blue);
     font-weight: 100;
     font-size: 2.5em;
     margin-bottom: 4px;
 }
 
-.card_container .feature  p{
-    font-size: 1em    ;
+.card_container .feature p {
+    font-size: 1em;
 }
-.user_info{
+
+.user_info {
     width: 100%;
     display: flex;
     margin-top: 10px;
     font-size: 1.5em;
 }
-.user_info span a{
+
+.user_info span a {
     margin-left: 15px;
     color: var(--dark_blue);
 }
-.cardbtn{
+
+.cardbtn {
     margin-top: 20px;
     width: 100%;
 }
-.cardbtn .btn{
+
+.cardbtn .btn {
     width: 100%;
 }
-.search_result{
+
+.search_result {
     text-align: center;
 }
-.title-red{
-    background: linear-gradient(to bottom left, #cc000b 47%,  #fc1e49  100%);
+
+.title-red {
+    background: linear-gradient(to bottom left, #cc000b 47%, #fc1e49 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+}
+
+.serach_title {
+    text-align: center;
+}
+
+.showboxContainer {
+    /*margin: 10px;*/
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
+    margin-bottom: 30px;
+}
+
+.showbox {
+    width: 100%;
+    /*background: #999999;*/
+    height: 90vh;
+    display: flex;
+    /*margin: auto;*/
+    padding-left: 5%;
+    /*justify-content: center;*/
+}
+
+.hostel_info_box {
+    width: 60%;
+    height: 100%;
+    padding-top: 20px;
+
+    /*background: #00C4FF;*/
+}
+
+.genralbox {
+    /*background: red;*/
+    width: 40%;
+}
+
+.show_img {
+    height: 450px;
+}
+
+.hostel_desc {
+    padding-left: 20px;
+    box-shadow: 0 13px 20px -6px rgba(0, 0, 0, 0.25);
+
+
+}
+
+.hostel_desc h1 {
+    margin-top: 10px;
+
+}
+
+.colorful {
+    color: var(--dark_blue);
+}
+
+.mar3 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.light {
+    font-weight: 100;
+}
+
+.list_el {
+    padding: 20px;
+    width: 100%;
+    /*background: #e6f6ff;*/
+    margin-top: 10px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.list_p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.genralbox {
+    padding-top: 20px;
+    padding-left: 3%;
+    /*background: #999999;*/
+}
+
+.pricingbox {
+    width: 40%;
+    /*background: #BBBBBB;*/
+    height: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #dcdcdc;
+    border-radius: 20px;
+    box-shadow: 0 13px 20px -6px rgba(0, 0, 0, 0.25);
+
+}
+
+.pricingbox .btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.userbox {
+    padding-top: 20px;
+    width: 40%;
+}
+
+.userbox_content {
+    width: 100%;
+    /*background: #BBBBBB;*/
+    height: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #dcdcdc;
+    border-radius: 20px;
+    box-shadow: 0 13px 20px -6px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+}
+.avatar{
+    width: 50%;
+
+}
+.user_avatar{
+    display: flex;
+    justify-content: center;
+}
+.user_info_show{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.smallgrey{
+    font-size: 15px;
+    color: #575757;
+}
+
+.badge{
+    margin-top: 11px;
+    border-top: 1px solid #dcdcdc;
+    padding-top: 11px;
+}
+.full_width{
+    margin-top: 10px;
+    width: 100%;
+}
+.showTitle{
+    font-size: 3.5em;
 }
