@@ -67,7 +67,7 @@
     <div class="genralbox">
       <div class="pricingbox">
         <h2 class="f">Get at only </h2>
-        <h1 class="title">₹ 2000/-</h1>
+        <h1 class="title">₹<%= @hostel.price %>/-</h1>
         <%= link_to "tel:#{@hostel.user.phone}", class: "btn btn-outline-success mx-2" do %>
           <i class="fa-solid fa-phone" style="color: #ffffff;"></i> Call
         <% end %>
