@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user=User.new filter_params
+    @user.gender=params[:gender]
     puts "#{@user.inspect}-********************************************-"
     if @user.save
       flash[:ok]="User created successfully,login to continue"
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
 
   def update
     @user=User.find params[:id]
+    @user.gender=params[:gender]
     if @user.update filter_params
       flash[:ok] = "User details updated"
       redirect_to @user
@@ -41,6 +43,6 @@ class UsersController < ApplicationController
 
   private
   def filter_params
-    params.require(:user).permit(:name,:email,:password,:password_confirmation,:phone,:owner,:username,:desc)
+    params.require(:user).permit(:name,:email,:password,:password_confirmation,:phone,:owner,:username,:desc,:gender)
   end
 end

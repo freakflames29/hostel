@@ -1,53 +1,65 @@
 <% if model.errors.any? %>
-  <% model.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
+  <div class="error_box">
+    <h4>You got some errors !</h4>
+    <% model.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+
 <% end %>
 
-<%= form_with model: model, class: "form-control" do |f| %>
-  <div class="mb-3">
-    <%= f.label :name, class: "form-label" %>
-    <%= f.text_field :name, required: true, class: "form-control" %>
-  </div>
-  <div class="mb-3">
-    <%= f.label :username, class: "form-label" %>
-    <%= f.text_field :username, required: true, class: "form-control" %>
-  </div>
+<div class="user_container">
 
-  <div class="mb-3">
-    <%= f.label :email, class: "form-label" %>
-    <%= f.email_field :email, required: true, class: "form-control" %>
-  </div>
-  <div class="mb-3">
+  <%= form_with model: model, class: "sign_login_form" do |f| %>
 
-    <%= f.label :phone, class: "form-label" %>
-    <%= f.number_field :phone, required: true, class: "form-control" %>
-  </div>
-  <div class="mb-3">
-
-    <%= f.label :password, class: "form-label" %>
-    <%= f.password_field :password, required: true, class: "form-control" %>
-  </div>
-  <div class="mb-3">
-
-    <%= f.label :password_confirmation, "Confirm password", class: "form-label" %>
-    <%= f.password_field :password_confirmation, required: true, class: "form-control" %>
-  </div>
+    <p class="flabel"><%= f.label :name, class: "form-label" %></p>
+    <%= f.text_field :name, required: true, class: "sign_log_field" %>
 
 
-  <div class="mb-3">
-    <%= f.radio_button :owner, "0", required: true %>
-    <%= f.label :owner, "I want to find hostels", class: "form-label" %>
-    <%= f.radio_button :owner, "1" %>
-    <%= f.label :owner, "I am a hostel owner", required: true, class: "form-label" %>
-  </div>
+    <p class="flabel"><%= f.label :username, class: "form-label" %></p>
+    <%= f.text_field :username, required: true, class: "sign_log_field" %>
 
-  <div class="mb-3">
-    <%= f.label :desc,"Description",class: "form-label" %>
-    <%= f.text_area :desc,row:5,class: "form-control" %>
-  </div>
-  <div class="mb-3">
+    <p class="flabel"><%= f.label :gender, class: "form-label" %></p>
+    <%= select_tag :gender, options_for_select([%w[Male M], %w[Female F]]), class: " sign_log_field" %>
+
+
+
+    <p class="flabel"><%= f.label :email, class: "form-label" %></p>
+    <%= f.email_field :email, required: true, class: "sign_log_field" %>
+
+
+
+    <p class="flabel"><%= f.label :phone, class: "form-label" %></p>
+    <%= f.number_field :phone, required: true, class: "sign_log_field" %>
+
+
+
+    <p class="flabel"><%= f.label :password, class: "form-label" %></p>
+    <%= f.password_field :password, required: true, class: "sign_log_field" %>
+
+
+
+    <p class="flabel"><%= f.label :password_confirmation, "Confirm password", class: "form-label" %></p>
+    <%= f.password_field :password_confirmation, required: true, class: "sign_log_field" %>
+
+
+    <p class="flabel">Why you want to Signup ?</p>
+    <div class="radio_box">
+
+      <%= f.radio_button :owner, "0", required: true %>
+      <%= f.label :owner, "I want to find hostels", class: "form-label flabel" %>
+      <%= f.radio_button :owner, "1" %>
+      <%= f.label :owner, "I am a hostel owner", required: true, class: "form-label flabel mb-3" %>
+
+    </div>
+
+    <p class="flabel"><%= f.label :desc, "Description", class: "form-label" %></p>
+    <%= f.text_area :desc, row: 5, class: "sign_log_field mb-3" %>
+
+
     <%= f.submit btn_val, class: "btn btn-primary h3" %>
-  </div>
 
-<% end %>
+
+  <% end %>
+
+</div>

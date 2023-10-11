@@ -1,29 +1,68 @@
-<h1 class="h1 text-center">User information 👇</h1>
-<hr>
-<div class="d-flex justify-content-center mb-5 mt-5">
-  <div class="card " style="width: 30rem;">
-    <div class="card-body">
+<!--<h1 class="h1 text-center">User information 👇</h1>-->
+<!--<hr>-->
+<!--<div class="d-flex justify-content-center mb-5 mt-5">-->
+<!--  <div class="card " style="width: 30rem;">-->
+<!--    <div class="card-body">-->
+<%# if @user.owner.eql?(1) %>
+<!--        <small>👑 Uploader profile</small>-->
+<%# end %>
+<!--      <h1 class="card-title">👤 <%#= @user.name.capitalize %></h1>-->
+<!--      <h6 class="card-subtitle mb-2 text-body-secondary">@<%#= @user.username %> | ✉️ <%#= @user.email %> |-->
+<!--        📞 <%#= @user.phone %></h6>-->
+
+<!--      <p class="card-text"><%#= @user.desc %></p>-->
+
+<%# if @user.eql?(current_user) %>
+
+<%#= link_to "✍️ Edit info", edit_user_path, class: "btn btn-outline-warning" %>
+<%# end %>
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<%# if @user.hostels.size > 0 %>
+<!--  <h1 class="h1 text-center mb-3">Hostels by @<%#= @user.username %></h1>-->
+
+<%#= render "hostels/hostel", para: @hostels %>
+<%# else %>
+
+
+<%# end %>
+
+<div class="userprofile_container">
+  <div class="userprofile">
+    <div class="userImage">
+      <%= image_tag "male.png", class: "user_profile_avatar" %>
+    </div>
+
+    <div class="information">
       <% if @user.owner.eql?(1) %>
-        <small>👑 Uploader profile</small>
+        <p class="badge_owner"><i class="fa-solid fa-crown" style="color: #30a2ff;"></i> Owner</p>
       <% end %>
-      <h1 class="card-title">👤 <%= @user.name.capitalize %></h1>
-      <h6 class="card-subtitle mb-2 text-body-secondary">@<%= @user.username %> | ✉️ <%= @user.email %> |
-        📞 <%= @user.phone %></h6>
-
-      <p class="card-text"><%= @user.desc %></p>
-
+      <h1 class="colorful mb-3"><%= @user.name.capitalize %></h1>
+      <p class="smallgrey mb-3">@<%= @user.username %></p>
+      <p><%= @user.desc %></p>
       <% if @user.eql?(current_user) %>
 
-        <%= link_to "✍️ Edit info", edit_user_path, class: "btn btn-outline-warning" %>
+        <%= link_to edit_user_path, class: "btn full_width" do %>
+          <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i> Edit
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
+
+
 <% if @user.hostels.size > 0 %>
-  <h1 class="h1 text-center mb-3">Hostels by @<%= @user.username %></h1>
 
-  <%= render "hostels/hostel", para: @hostels %>
+  <h1 class="serach_title colorful">Hostels uploaded by <%= @user.name %></h1>
+  <div class="hostels_container">
+    <div class="hostels_store">
+
+
+      <%= render "hostels/hostel", para: @hostels %>
 <% else %>
-  <!--  <h1>There is no hostels</h1>-->
 
+
+  </div>
+  </div>
 <% end %>

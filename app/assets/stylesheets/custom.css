@@ -101,7 +101,11 @@ a {
     display: block;
     border: none;
     width: 20%;
-    font-size: 16px;
+    font-size: 15px;
+}
+
+.redbtn {
+    background: linear-gradient(to bottom left, #cc000b 47%, #fc1e49 100%);
 }
 
 .btn:hover {
@@ -473,34 +477,149 @@ a {
     box-shadow: 0 13px 20px -6px rgba(0, 0, 0, 0.25);
     justify-content: center;
 }
-.avatar{
+
+.avatar {
     width: 50%;
 
 }
-.user_avatar{
+
+.user_avatar {
     display: flex;
     justify-content: center;
 }
-.user_info_show{
+
+.user_info_show {
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
 }
-.smallgrey{
+
+.smallgrey {
     font-size: 15px;
     color: #575757;
 }
 
-.badge{
+.badge {
     margin-top: 11px;
     border-top: 1px solid #dcdcdc;
     padding-top: 11px;
 }
-.full_width{
+
+.full_width {
     margin-top: 10px;
     width: 100%;
 }
-.showTitle{
+
+.showTitle {
     font-size: 3.5em;
+}
+
+.user_container {
+    width: 100%;
+
+}
+
+.sign_login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    width: 50%;
+    margin: auto;
+}
+
+.sign_log_field {
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--light_blue);
+    outline: none;
+    margin-top: 10px;
+}
+
+.sign_log_field:focus {
+    border: 4px solid var(--dark_blue);
+
+}
+
+.flabel {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.radio_box {
+    margin-top: 10px;
+}
+
+.error_box {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0.38);
+    border-radius: 10px;
+}
+
+.alert {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(250, 204, 74, 0.38);
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.crossbtn {
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+
+}
+
+.userprofile_container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    margin-bottom: 3%;
+}
+
+.userprofile {
+    width: 30%;
+    /*background: red;*/
+    height: 300px;
+    border-radius: 20px;
+    /*border: 2px solid #dcdcdc;*/
+    border: 2px solid var(--dark_blue);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.userImage {
+    width: 40%;
+}
+
+.user_profile_avatar {
+    width: 100%;
+    margin-top: -50%;
+}
+
+.information {
+    text-align: center;
+}
+
+.badge_owner {
+    color: var(--dark_blue);
+    padding: 5px 6px;
+    border: 1px solid var(--dark_blue);
+    border-radius: 24px;
+    font-size: 11px;
 }

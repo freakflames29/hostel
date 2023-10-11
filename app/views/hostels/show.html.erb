@@ -68,13 +68,30 @@
       <div class="pricingbox">
         <h2 class="f">Get at only </h2>
         <h1 class="title">₹<%= @hostel.price %>/-</h1>
-        <%= link_to "tel:#{@hostel.user.phone}", class: "btn btn-outline-success mx-2" do %>
-          <i class="fa-solid fa-phone" style="color: #ffffff;"></i> Call
-        <% end %>
+        <% if logged_in? %>
+
+          <% if @hostel.user.eql?(current_user) %>
+            <%= link_to edit_hostel_path(@hostel), class: "btn btn-outline-warning mx-2" do%> <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i> Edit <% end %>
+
+            <%= link_to  hostel_path(@hostel), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this hostel?" } do%><i class="fa-solid fa-trash" style="color: #ffffff;"></i> delete<% end %>
+          <% else %>
+            <%= link_to "tel:#{@hostel.user.phone}", class: "btn btn-outline-success mx-2" do %>
+              <i class="fa-solid fa-phone" style="color: #ffffff;"></i> Call
+            <% end %>
+            <%= link_to "mailto:#{@hostel.user.email}", class: "btn btn-outline-success mx-2" do %>
+              <i class="fa-solid fa-envelope " style="color: #ffffff;"></i> Mail
+            <% end %>
 
 
-        <%= link_to "mailto:#{@hostel.user.email}", class: "btn btn-outline-primary mx-2" do %>
-          <i class="fa-solid fa-envelope" style="color: #ffffff;"></i> Email
+          <% end %>
+
+
+        <% else %>
+          <p class="serach_title smallgrey">To see contact information</p>
+          <%= link_to login_path, class: "btn" do %>
+            <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+            Login
+          <% end %>
         <% end %>
 
 
@@ -92,8 +109,17 @@
 
             <span class="badge"><i class="fa-solid fa-hotel"></i> <b><%= @hostel.user.hostels.count %></b> Hostels</span>
 
-            <%= link_to  user_path(@hostel.user),class: "btn full_width" do%>
-              View
+            <% if logged_in? %>
+
+              <%= link_to user_path(@hostel.user), class: "btn full_width" do %>
+                View
+              <% end %>
+            <% else %>
+              <p class="serach_title smallgrey">To see user information</p>
+              <%= link_to login_path, class: "btn full_width " do %>
+                <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+                Login
+              <% end %>
             <% end %>
           </div>
         </div>

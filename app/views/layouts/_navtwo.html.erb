@@ -13,16 +13,24 @@
         <%= link_to "Hostels", hostels_path, class: "nav_links" %>
         <span>About US</span>
         <span>Contact Us</span>
-        <a href="/login" class="btn">
+        <% if !logged_in? %>
 
-          <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
-          <span>  Login</span>
-        </a>
+          <a href="/login" class="btn">
 
-        <a href="/signup" class="btn">
-          <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
-          Signup
-        </a>
+            <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+            <span>  Login</span>
+          </a>
+
+          <a href="/signup" class="btn">
+            <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+            Signup
+          </a>
+          <% else %>
+        <%= link_to logout_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }, class: "btn redbtn" do%>
+          <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i> Logout
+          <% end %>
+
+        <% end %>
       </div>
     </div>
   </div>
