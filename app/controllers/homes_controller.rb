@@ -19,10 +19,10 @@ class HomesController < ApplicationController
       if @found_hostel and @found_hostel.size > 0
         @result = 1
 
-        render :index
+        render :search
       else
         @result = 0
-        render :index
+        render :search
       end
     elsif @params_opt.eql?("CIT")
       @params_downcase = params[:search][:search_q].downcase
@@ -32,10 +32,10 @@ class HomesController < ApplicationController
       if @found_hostel and @found_hostel.size > 0
         @result = 1
 
-        render :index
+        render :search
       else
         @result = 0
-        render :index
+        render :search
       end
     end
   end

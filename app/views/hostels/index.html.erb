@@ -1,2 +1,11 @@
-<h1 class="h1 text-center mb-5">All Hostels</h1>
-<%= render "hostel",para: @hostels %>
+<div class="title-2 title mb-3 div-center">
+  <h1>All Hostels</h1>
+</div>
+
+<%#= render "hostel",para: @hostels %>
+
+<div class="hostels_container">
+  <div class="hostels_store">
+    <%= render "hostel",para: @hostels %>
+  </div>
+</div>

@@ -1,26 +1,60 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <% para.each do |hostel| %>
-    <div class="col">
-      <div class="card">
+<% para.each do |hostel| %>
 
-        <%= image_tag "#{hostel.img}", alt: "mess image", class: "card-img-top custom_imgs" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= hostel.title.capitalize %></h5>
+  <div class="card_container">
+    <div class="img">
+      <%= image_tag "#{hostel.img}", alt: "mess image", class: "card-img-top" %>
+    </div>
+    <div class="details">
+      <p class="slowtext"><%= hostel.title.capitalize %></p>
+      <h2> ₹ 7000/-</h2>
+      <p class="slowtext"> <i class="fa-solid fa-location-dot" style="color: #30a2ff;"></i> <%= hostel.city.capitalize %></p>
+    </div>
+    <div class="feature">
+      <p ><%= hostel.desc[0..100] %></p>
+<!--      <p><i class="fa-solid fa-wifi" style="color: #30a2ff;"></i> Wifi</p>-->
+<!--      <p><i class="fa-solid fa-bed" style="color: #30a2ff;"></i> Games</p>-->
+<!--      <p><i class="fa-solid fa-bed" style="color: #30a2ff;"></i> Games</p>-->
+      <!--      <p> <i class="fa-solid fa-bed" style="color: #30a2ff;"></i> Games</p>-->
+    </div>
+    <div class="user">
+      <p class="slowtext">Uploader</p>
+      <div class="user_info">
+        <i class="fa-solid fa-user-tie" style="color: #30a2ff;"></i>
+        <span>
+          <%= link_to hostel.user.name.capitalize, user_path(hostel.user) %>
+        </span>
 
-          <small class="text-body-secondary">by @<%= link_to hostel.user.username, user_path(hostel.user) %></small>
-
-          <p class="card-text"><%= hostel.desc %></p>
-          <h5>
-            <span class="badge text-bg-warning">📍 <%= hostel.city.capitalize %></span>
-
-          </h5>
-
-          <%= link_to "View", hostel_path(hostel), class: "btn btn-primary" %>
-
-        </div>
+      </div>
+      <div class="cardbtn">
+        <%= link_to hostel_path(hostel), class: "btn btn-primary" do%>
+          <p>View</p>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 
 
-</div>
+
+
+
+<!--<div class="ca">-->
+<!--    <div class="card">-->
+
+<%#= image_tag "#{hostel.img}", alt: "mess image", class: "card-img-top custom_imgs" %>
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title"><%#= hostel.title.capitalize %></h5>-->
+
+<!--        <small class="text-body-secondary">by @<%#= link_to hostel.user.username, user_path(hostel.user) %></small>-->
+
+<!--        <p class="card-text"><%#= hostel.desc %></p>-->
+<!--        <h5>-->
+<!--          <span class="badge text-bg-warning">📍 <%#= hostel.city.capitalize %></span>-->
+
+<!--        </h5>-->
+
+<%#= link_to "View", hostel_path(hostel), class: "btn btn-primary" %>
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->

@@ -1,11 +1,18 @@
-<%# if @result %>
-<%#= @found_hostel.inspect %>
-<!--  <h1 class="h1 text-center mb-5">Search results</h1>-->
-  <%#= render "hostels/hostel", para: @found_hostel %>
-<%# else %>
-<!--  <h1>No hostel found</h1>-->
-<%# end %>+
+<div class="search_result" id="searchRes">
+  <% if @result.eql?(1) %>
+    <h1 class="title title-2"><%= pluralize(@found_hostel.length, " Hostel") %> Found !</h1>
+  <% end %>
 
-<%= @params_downcase %>
-<%= @params_opt %>
-<%= @found_hostel.inspect %>
+</div>
+
+<div class="hostels_container">
+  <div class="hostels_store">
+    <% if @result.eql?(1) %>
+<%#= @found_hostel.inspect %>
+      <!--  <h1 class="h1 text-center mb-5">( <%#= pluralize(@found_hostel.length, " ) Hostel") %> Found !</h1>-->
+      <%= render "hostels/hostel", para: @found_hostel %>
+    <% elsif @result.eql?(0) %>
+        <h1 class="title title-2 title-red">No hostel found</h1>
+    <% end %>
+  </div>
+</div>
