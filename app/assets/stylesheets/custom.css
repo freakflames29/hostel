@@ -379,6 +379,7 @@ a {
     /*margin: auto;*/
     padding-left: 5%;
     /*justify-content: center;*/
+    margin-left: 6%;
 }
 
 .hostel_info_box {
@@ -622,4 +623,7 @@ a {
     border: 1px solid var(--dark_blue);
     border-radius: 24px;
     font-size: 11px;
+}
+#longbtn{
+    width: 26%;
 }

@@ -68,6 +68,6 @@ class HostelsController < ApplicationController
   private
 
   def filter_params
-    params.require(:hostel).permit(:title, :desc, :landmark, :zipcode, :city, :country, :img, :address)
+    params.require(:hostel).permit(:title, :desc, :landmark, :zipcode, :city, :country, :img, :address,:price)
   end
 end
