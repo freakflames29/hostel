@@ -1,6 +1,6 @@
-const chat = document.getElementById("chat")
+const chat = document.getElementById("chatarea")
 const msgbox = document.getElementById("msgBox")
-
+console.log("Hiii")
 const responses = {
     "signup": "To signup click here: <a href= 'http://127.0.0.1:3000/signup'>Signup</a>",
     "login": "To login click here: <a href= 'http://127.0.0.1:3000/login'>Login</a> ",
@@ -11,7 +11,7 @@ const responses = {
 }
 const appendMsg = (msg, opt) => {
     const chatDiv = document.createElement("div")
-    chatDiv.innerHTML = `<p class="text-${opt} d-block p-2"><strong>${msg}</strong></p>`;
+    chatDiv.innerHTML = `<p class="text-${opt} d-block p-2">${msg}</p>`;
     chat.appendChild(chatDiv)
 }
 msgbox.addEventListener('keydown', (e) => {

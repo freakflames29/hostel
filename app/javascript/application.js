@@ -3,5 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 import './search'
-import './alertClose'
-// import './chat'
+// import './alertClose'
+import './chat'
