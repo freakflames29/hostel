@@ -534,7 +534,7 @@ a {
 .sign_log_field {
     padding: 15px 20px;
     font-size: 1.5rem;
-    border-radius: 20px;
+    border-radius: 100px;
     border: 2px solid var(--light_blue);
     outline: none;
     margin-top: 10px;
@@ -679,8 +679,9 @@ a {
 .chatInput input {
     padding: 10px;
     border: 2px solid var(--light_blue);
-    border-radius: 10px;
     width: 100%;
+    border-radius: 100px;
+
     outline: none;
 }
 
@@ -694,6 +695,40 @@ a {
     border-radius: 10px;
     margin-left: 8px;
 }
-.bodyWrap{
+
+.bodyWrap {
     height: 200vh;
+}
+
+#chatIcon {
+    background: var(--light_blue);
+    width: 4%;
+    padding: 19px;
+    border-radius: 59%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 148%;
+    right: 1%;
+
+    z-index: 100;;
+}
+
+.hideMe {
+    display: none;
+}
+
+.text-primary {
+    margin-bottom: 5px;
+}
+
+.chatBubble {
+    width: 99%;
+    background: aliceblue;
+    padding: 10px;
+    border: 1px solid #badbf7;
+    border-radius: 14px;
+    margin-top: 10px;
 }

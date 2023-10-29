@@ -5,3 +5,4 @@ import "controllers"
 import './search'
 // import './alertClose'
 import './chat'
+import './chatToggle'

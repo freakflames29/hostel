@@ -11,17 +11,18 @@ const responses = {
 }
 const appendMsg = (msg, opt) => {
     const chatDiv = document.createElement("div")
+    chatDiv.classList.add("chatBubble")
     chatDiv.innerHTML = `<p class="text-${opt} d-block p-2">${msg}</p>`;
     chat.appendChild(chatDiv)
 }
 msgbox.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const msgbody = msgbox.value.toLowerCase()
-        appendMsg("You: " + msgbody, "primary")
+        appendMsg(" <i class='fa-solid fa-user' style='color: #000000;'></i> You: " + msgbody, "primary")
         msgbox.value="";
         if (msgbody.includes("signup")) {
             setTimeout(() => {
-                const chatResponse = "Bot: " + responses["signup"]
+                const chatResponse = "<i class='fa-solid fa-robot' style='color: #000000;'></i> Bot: " + responses["signup"]
                 appendMsg(chatResponse, "success")
             }, 500)
 
@@ -29,7 +30,7 @@ msgbox.addEventListener('keydown', (e) => {
         }
         else if (msgbody.includes("upload")) {
             setTimeout(() => {
-                const chatResponse = "Bot: " + responses["upload"]
+                const chatResponse = "<i class='fa-solid fa-robot' style='color: #000000;'></i> Bot: " + responses["upload"]
                 appendMsg(chatResponse, "success")
             }, 500)
 
@@ -37,7 +38,7 @@ msgbox.addEventListener('keydown', (e) => {
         }
         else if (msgbody.includes("hostel")) {
             setTimeout(() => {
-                const chatResponse = "Bot: " + responses["hostel"]
+                const chatResponse = "<i class='fa-solid fa-robot' style='color: #000000;'></i> Bot: " + responses["hostel"]
                 appendMsg(chatResponse, "success")
             }, 500)
 
@@ -45,14 +46,14 @@ msgbox.addEventListener('keydown', (e) => {
         }
         else if (msgbody.includes("login")) {
             setTimeout(() => {
-                const chatResponse = "Bot: " + responses["login"]
+                const chatResponse = "<i class='fa-solid fa-robot' style='color: #000000;'></i> Bot: " + responses["login"]
                 appendMsg(chatResponse, "success")
             }, 500)
 
 
         }else if (msgbody.includes("hi")) {
             setTimeout(() => {
-                const chatResponse = "Bot: " + responses["hi"]
+                const chatResponse = "<i class='fa-solid fa-robot' style='color: #000000;'></i> Bot: " + responses["hi"]
                 appendMsg(chatResponse, "success")
             }, 500)
 
@@ -60,7 +61,7 @@ msgbox.addEventListener('keydown', (e) => {
         }
         else {
             setTimeout(() => {
-                const chatResponse = "Bot: " + "Sorry ! i dont know that"
+                const chatResponse = "<i class='fa-solid fa-robot' style='color: #000000;'></i> Bot: " + "Sorry ! i dont know that"
                 appendMsg(chatResponse, "danger")
             }, 500)
         }
