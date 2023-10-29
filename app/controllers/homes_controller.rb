@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class HomesController < ApplicationController
+
+  def about
+
+  end
   def index
     @result = 2
   end

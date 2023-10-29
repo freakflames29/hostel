@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :hostels, except: [:new]
   get 'upload', to: "hostels#new"
 
+  get 'about',to:"homes#about"
+
   # search routes
 
   get 'search',to: "homes#search"
